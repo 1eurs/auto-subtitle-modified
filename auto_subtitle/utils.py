@@ -26,8 +26,8 @@ def format_timestamp(seconds: float, always_include_hours: bool = False):
     seconds = milliseconds // 1_000
     milliseconds -= seconds * 1_000
 
-    hours_marker = f"{hours:02d}:" if always_include_hours or hours > 0 else ""
-    return f"{hours_marker}{minutes:02d}:{seconds:02d},{milliseconds:03d}"
+    hours_marker = f"{hours}:" if always_include_hours or hours > 0 else ""
+    return f"{hours_marker}{minutes:02d}:{seconds:02d}.{milliseconds:03d}"
 
 
 def write_srt(transcript: Iterator[dict], file: TextIO):
